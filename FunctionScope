@@ -1,0 +1,17 @@
+var name = "John";
+
+(function() {
+    console.assert(typeof name === "undefined"); // 1
+
+    var name = "Jane";
+
+    console.assert(name === "Jane"); // 2
+})();
+
+console.assert(name === "John"); // 3
+
+//Make the tests pass, and then describe why the assert at (1) is different that the assert at (2) and (3).
+
+//the name inside the function is local in instance 1 and therefore undefined
+//the name in instance 2 gets the value just above it - again, local
+//the name in instance 3 is global and gets the value set globally in line 1
